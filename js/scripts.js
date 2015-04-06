@@ -11,7 +11,7 @@
 		var saosPathToAjax = saosEventCalendar.site_url + "/wp-admin/admin-ajax.php";
 		
 		function eventListDetailsToggle() {
-			$(".event-date").hoverIntent(function() {
+			$(".event-date").hover(function() {
 				$(this).next(".event-date-details").stop(true, false).fadeToggle('fast');
 			});
 		}
