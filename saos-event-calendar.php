@@ -9,16 +9,18 @@ Version: 1.0
 Author URI: http://studioaceofspade.com
 */
 
-wp_enqueue_script('saos-event-calendar-scripts', plugins_url( 'js/scripts.js', __FILE__ ), array('jquery'));
-$params = array(
-	'site_url' => get_option('siteurl'),
-	'plugin_dir' => plugins_url()
-);
-wp_localize_script('saos-event-calendar-scripts', 'saosEventCalendar', $params);
+if(!is_admin()) { 
+}
 
 function enq_scripts() {
 	wp_register_style('saos-event-calendar-styles', plugins_url( 'css/styles.css', __FILE__ ));
 	wp_enqueue_style('saos-event-calendar-styles');
+    wp_enqueue_script('saos-event-calendar-scripts', plugins_url( 'js/scripts.js', __FILE__ ), array('jquery'));
+    $params = array(
+        'site_url' => get_option('siteurl'),
+        'plugin_dir' => plugins_url()
+    );
+    wp_localize_script('saos-event-calendar-scripts', 'saosEventCalendar', $params);
 }
 add_action('wp_enqueue_scripts', 'enq_scripts');
 
