@@ -5,10 +5,17 @@
 		selectMonth();
 		calendarDisplayToggle();
 		eventListDetailsToggle();
+        initializePopOver();
 		
 		var domain = document.domain;
 		var saosPluginDir = saosEventCalendar.plugin_dir + "/saos-event-calendar/";
 		var saosPathToAjax = saosEventCalendar.site_url + "/wp-admin/admin-ajax.php";
+
+        function initializePopOver() {
+            $('.popoverData').popover({
+                html : true
+            });
+        }
 		
 		function eventListDetailsToggle() {
 			$(".event-date").hover(function() {
