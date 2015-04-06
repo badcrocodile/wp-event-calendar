@@ -23,6 +23,7 @@ function calendar_header($use_cals=false, $use_cats=false) {
 				$cheader .=	'<h3>Venue</h3>';
 				/**
 				* We only want the child venues of the current calendar type (main, csa, mt)
+                * Remove $get_venue_term_ID and $venue_term_ID and 'parent' if we don't need to support multiple calendars
 				*/
 				$get_venue_term_ID = get_term_by('slug',$use_cals,'venues'); // Shortcode parameter is taxonomy-slug based so find its ID by slug with get_term_by 
 				$venue_term_ID = $get_venue_term_ID->term_id; // the tax ID
@@ -43,6 +44,7 @@ function calendar_header($use_cals=false, $use_cats=false) {
 				$cheader .= '<h3>Category</h3>';
 				/**
 				* We only want the child tours of the current calendar type (main, csa, mt)
+                * Remove $get_venue_term_ID and $venue_term_ID and 'parent' if we don't need to support multiple calendars
 				*/
 				$get_tour_term_ID = get_term_by('slug',$use_cals,'tours'); // Shortcode parameter is taxonomy-slug based so find its ID by slug with get_term_by 
 				$tour_term_ID = $get_tour_term_ID->term_id; // the tax ID
